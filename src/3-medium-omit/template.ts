@@ -5,6 +5,7 @@
  *        本题考点：
  *                1. as 做类型断言，承接左右两侧
  * */
-type MyOmit<T, K extends keyof T> = {
+type MyOmit<T, K extends keyof any> = {
+// type MyOmit<T, K extends keyof T> = {
   [P in keyof T as P extends K ? never : P]: T[P];
 };
